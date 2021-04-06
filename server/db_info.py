@@ -16,6 +16,10 @@ class User(BaseModel):
     friends = CharField(default='')
     keypair = CharField(default='')
 
-u = str(input("UID? "))
+u = str(input("Delete uid? \n"))
 for user in User.select().where(User.uid == u):
     print("UID:",user.uid, "\nPASS:", user.upass,"\nMessage:\n", user.messages, "\n------------------\nKeypair:", user.keypair)
+    confirm = str(input("Confirm? y/n\n"))
+    if confirm == "y":
+        user.delete_instance()
+        user.save()
