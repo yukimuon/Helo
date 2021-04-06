@@ -1,0 +1,15 @@
+PORTS:
+
+    PORT: 65000 - Outbound: Server Pubkey
+    PORT: 65001 - Inbound: Message handler
+    PORT: 65503 - Inbound: Update Key
+
+Message syntax:
+
+    MSG: <REGISTER-UID-UPASS> - Register user with uid and password
+    MSG: <FETCH-UID-UPASS> - Fetch message
+    MSG: <SEND:RECEIVER:MESSAGE-UID-UPASS> - Send message to receiver
+    MSG: <ADD:UID-UID-UPASS> - Add friend
+    MSG: <CLEAR-UID-UPASS>: - Delete all messages in db
+
+UID max chars: 5
